@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectedBox1 : MonoBehaviour
 {
-   
+    public GameObject canvas;
     public GameObject objectToAnimate;
     public string f_talkExcited;
     private bool hasCollided = false;
@@ -15,6 +15,14 @@ public class DetectedBox1 : MonoBehaviour
         {
             hasCollided = true;
             objectToAnimate.GetComponent<Animator>().Play(f_talkExcited);
+            StartCoroutine(CanvasCoroutine());
         }
+    }
+
+    IEnumerator CanvasCoroutine()
+    {
+        yield return new WaitForSeconds(10f);
+        canvas.SetActive(true);
+        
     }
 }
