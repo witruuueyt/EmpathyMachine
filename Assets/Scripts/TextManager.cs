@@ -9,9 +9,9 @@ public class TextManager : MonoBehaviour
 {
     public TMP_InputField inputField; 
     public TMP_Text waitingText;
-    public TMP_Text nextText; 
-
-
+    public TMP_Text nextText;
+    public GameObject after;
+    public GameObject decetedbox2;
     private void Start()
     {
         
@@ -31,8 +31,11 @@ public class TextManager : MonoBehaviour
 
     IEnumerator WaitingCoroutine()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(3f);
+        after.SetActive(true);
+        yield return new WaitForSeconds(60f);
         nextText.text = waitingText.text;
         waitingText.text = "";
+        decetedbox2.SetActive(true);
     }
 }
