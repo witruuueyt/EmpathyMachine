@@ -7,12 +7,15 @@ public class DetectedBox1 : MonoBehaviour
     public GameObject canvas;
     public GameObject objectToAnimate;
     public string f_talkExcited;
+    public string breath;
     private bool hasCollided = false;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider Collider)
     {
-        if (!hasCollided && collision.gameObject.tag == "Player")
+        Debug.Log("trigger");
+        if (!hasCollided && Collider.gameObject.tag == "Player")
         {
+            Debug.Log("animation");
             hasCollided = true;
             objectToAnimate.GetComponent<Animator>().Play(f_talkExcited);
             StartCoroutine(CanvasCoroutine());
@@ -23,6 +26,7 @@ public class DetectedBox1 : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         canvas.SetActive(true);
-        
+        yield return new WaitForSeconds(30f);
+        objectToAnimate.GetComponent<Animator>().Play(breath);
     }
 }

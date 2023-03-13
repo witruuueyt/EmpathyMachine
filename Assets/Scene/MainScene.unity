@@ -4864,7 +4864,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1667027872}
   objectToAnimate: {fileID: 2026756236}
-  f_talkExcited: 
+  f_talkExcited: f_talkExcited
+  breath: f_idleBreath
 --- !u!1 &331755456
 GameObject:
   m_ObjectHideFlags: 0
@@ -21900,10 +21901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936c163c08b3ddf40bca2957e27b73df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 1
-  pushDuration: 1
-  pushAngle: 90
-  pushSpeed: 50
 --- !u!1001 &1594109587
 PrefabInstance:
   m_ObjectHideFlags: 0
