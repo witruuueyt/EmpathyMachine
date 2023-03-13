@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class DetectedBox2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject door1;
+    public GameObject door2;
+    public string door;
+    private bool hasCollided = false;
+
+    void OnTriggerEnter(Collider Collider)
     {
-        
+        Debug.Log("trigger");
+        if (!hasCollided && Collider.gameObject.tag == "Player")
+        {
+            Debug.Log("animation");
+            hasCollided = true;
+            door1.GetComponent<Animator>().Play(door);
+            door2.GetComponent<Animator>().Play(door);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

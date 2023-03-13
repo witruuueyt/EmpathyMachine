@@ -17937,6 +17937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7feea27581dd43e4587fdda2644c7ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door1: {fileID: 0}
+  door2: {fileID: 0}
+  door: 
 --- !u!1 &1392231790
 GameObject:
   m_ObjectHideFlags: 0
@@ -20619,6 +20622,7 @@ MonoBehaviour:
   canvas: {fileID: 60993849}
   objectToAnimate: {fileID: 1279676825}
   f_talkExcited: 
+  breath: 
 --- !u!65 &1606001027
 BoxCollider:
   m_ObjectHideFlags: 0

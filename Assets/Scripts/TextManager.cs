@@ -7,22 +7,23 @@ using TMPro;
 
 public class TextManager : MonoBehaviour
 {
-    public TMP_InputField inputField; 
+    public TMP_Text inputField; 
     public TMP_Text waitingText;
     public TMP_Text nextText;
     public GameObject after;
     public GameObject decetedbox2;
     private void Start()
     {
-        
+        PlayerPrefs.SetString("savedText", "");
         string savedText = PlayerPrefs.GetString("savedText", "");
         waitingText.text = savedText;
     }
 
     public void SaveText()
     {
-        
-        string inputText = inputField.text;
+
+        keyboard kb = FindObjectOfType<keyboard>();
+        string inputText = kb.letter;
         PlayerPrefs.SetString("savedText", inputText);
         waitingText.text = inputText;
         StartCoroutine(WaitingCoroutine());
