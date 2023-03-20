@@ -22,8 +22,11 @@ public class TextManager : MonoBehaviour
     public void SaveText()
     {
 
-        keyboard kb = FindObjectOfType<keyboard>();
-        string inputText = kb.letter;
+        // keyboard kb = FindObjectOfType<keyboard>();
+        //  string inputText = kb.letter;
+
+        string inputText = inputField.text;
+
         PlayerPrefs.SetString("savedText", inputText);
         waitingText.text = inputText;
         StartCoroutine(WaitingCoroutine());
