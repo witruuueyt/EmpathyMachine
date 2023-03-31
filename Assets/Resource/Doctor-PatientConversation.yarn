@@ -1,0 +1,57 @@
+﻿title: Doctor-Patient Conversation
+
+start:
+  <<set $symptoms = false>>
+  <<set $testResults = false>>
+
+  Dr. Smith: Hello, I'm Dr. Smith. What brings you here today?
+  
+  * [Ask about Symptoms] I've been experiencing some symptoms lately.
+  * [Ask about Test Results] I'd like to know the results of my tests.
+  * [Greeting] Just wanted to say hi.
+
+Ask about Symptoms:
+  Dr. Smith: I see. Can you tell me more about your symptoms and how long you've been experiencing them?
+  
+  * [Describe Symptoms] I've been having some chest pain and shortness of breath.
+  * [Greeting] Thanks for asking.
+
+Describe Symptoms:
+  Dr. Smith: Okay, that sounds concerning. I'd like to perform some tests to determine the cause of your symptoms.
+  
+  * [Ask about Tests] What tests do you recommend?
+  * [Greeting] Thank you.
+
+Ask about Tests:
+  Dr. Smith: I recommend we do some blood tests and an electrocardiogram to start. We may need to do additional tests depending on the results.
+  
+  * [Ask about Electrocardiogram] What is an electrocardiogram?
+  * [Greeting] Thanks for the information.
+
+Ask about Electrocardiogram:
+  Dr. Smith: An electrocardiogram (ECG) is a test that measures the electrical activity of your heart. It can help us determine if there are any abnormalities that may be causing your symptoms.
+  
+  * [Greeting] Okay, thank you.
+
+Ask about Test Results:
+  Dr. Smith: Your blood test results came back and they indicate that your cholesterol levels are elevated. I recommend making some dietary changes and incorporating more exercise into your routine.
+  
+  * [Ask about Medication] Do I need to take medication?
+  * [Greeting] Thank you.
+
+Ask about Medication:
+  Dr. Smith: At this point, I don't think medication is necessary. Let's monitor your cholesterol levels and make some lifestyle changes first.
+  
+  * [Greeting] Okay, thank you.
+
+Greeting:
+  Dr. Smith: Hello, how are you feeling?
+  
+  * [Ask about Symptoms] I've been experiencing some symptoms lately.
+  * [Ask about Test Results] I'd like to know the results of my tests.
+  * [Goodbye] Thank you, Doctor.
+
+Goodbye:
+  Dr. Smith: You're welcome. Please follow up with me if you have any further questions or concerns.
+  
+  <<end>>
